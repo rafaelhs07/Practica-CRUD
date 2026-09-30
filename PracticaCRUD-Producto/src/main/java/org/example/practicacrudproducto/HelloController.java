@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.example.practicacrudproducto.Modelos.Categoria;
+import org.example.practicacrudproducto.Modelos.Producto;
 
 import java.math.BigDecimal;
 import java.net.URL;

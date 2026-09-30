@@ -1,4 +1,4 @@
-package org.example.practicacrudproducto;
+package org.example.practicacrudproducto.Modelos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

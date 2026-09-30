@@ -1,8 +1,9 @@
-package org.example.practicacrudproducto;
+package org.example.practicacrudproducto.Modelos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 
 @Data
