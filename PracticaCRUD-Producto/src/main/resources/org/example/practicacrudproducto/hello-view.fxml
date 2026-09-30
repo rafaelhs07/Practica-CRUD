@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="850.0" spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.practicacrudproducto.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <!-- Título -->
+    <Label text="Gestión de Productos" textFill="#2c3e50">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+
+    <!-- Formulario -->
+    <GridPane hgap="10.0" vgap="10.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="80.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" />
+            <ColumnConstraints halignment="RIGHT" minWidth="80.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" />
+        </columnConstraints>
+
+        <Label text="Código:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="txtCodigo" promptText="PROD-001" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Nombre:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <TextField fx:id="txtNombre" promptText="Nombre del producto" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+        <Label text="Categoría:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <ComboBox fx:id="cbCategoria" maxWidth="Infinity" promptText="Seleccione..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Precio:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <TextField fx:id="txtPrecioVenta" promptText="0.00" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+        <Label text="Existencia:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="txtExistencia" promptText="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Estado:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <CheckBox fx:id="chkActivo" selected="true" text="Producto Activo" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+    </GridPane>
+
+    <!-- Botones CRUD -->
+    <HBox spacing="10.0">
+        <Button mnemonicParsing="false" onAction="#guardarProducto" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Guardar" />
+        <Button mnemonicParsing="false" onAction="#actualizarProducto" style="-fx-background-color: #2980b9; -fx-text-fill: white;" text="Actualizar" />
+        <Button mnemonicParsing="false" onAction="#eliminarProducto" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Eliminar" />
+        <Button mnemonicParsing="false" onAction="#limpiarFormulario" text="Limpiar Campos" />
+    </HBox>
+
+    <Separator />
+
+    <!-- Barra de Filtros -->
+    <HBox alignment="CENTER_LEFT" spacing="10.0">
+        <Label text="Buscar:" />
+        <TextField fx:id="txtBuscar" promptText="Código o nombre..." prefWidth="200.0" />
+        <Label text="Filtrar Estado:" />
+        <ComboBox fx:id="cbFiltroEstado" prefWidth="120.0" />
+        <Label text="Filtrar Categoría:" />
+        <ComboBox fx:id="cbFiltroCategoria" promptText="Todas" prefWidth="150.0" />
+    </HBox>
+
+    <!-- Tabla -->
+    <TableView fx:id="tablaProductos" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colCodigo" prefWidth="100.0" text="Código" />
+            <TableColumn fx:id="colNombre" prefWidth="250.0" text="Nombre" />
+            <TableColumn fx:id="colCategoria" prefWidth="150.0" text="Categoría" />
+            <TableColumn fx:id="colPrecio" prefWidth="100.0" text="Precio" />
+            <TableColumn fx:id="colExistencia" prefWidth="100.0" text="Existencia" />
+            <TableColumn fx:id="colActivo" prefWidth="90.0" text="Activo" />
+        </columns>
+    </TableView>
+</VBox>
